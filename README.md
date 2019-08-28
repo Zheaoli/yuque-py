@@ -1,6 +1,6 @@
-# ![](./logo.png)
+# yuque-py
 
-Node SDK for [yuque](https://www.yuque.com/yuque/developer/api)
+Python SDK for [yuque](https://www.yuque.com/yuque/developer/api)
 
 
 ## Install
