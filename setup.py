@@ -4,22 +4,25 @@ from yuque_py import __version__
 
 here = os.path.abspath(os.path.dirname(__file__))
 
-packages = ["yuque_py"]
+packages = ["yuque_py", "yuque_py.models", "yuque_py.clients", "yuque_py.exceptions"]
 
 requires = [
-    "pytest==5.1.1" "pytest-cov==2.7.1" "requests==2.22.0" "requests-mock==1.6.0"
+    "pytest==5.1.1",
+    "pytest-cov==2.7.1",
+    "requests==2.22.0",
+    "requests-mock==1.6.0"
 ]
 
 setup(
     name="yuque-py",
     version=__version__,
-    decription="yuque api for python version",
+    description="yuque api for python version",
     author="Manjusaka",
     author_email="me@manjusaka.me",
     url="https://github.com/Zheaoli/yueque-py",
     packages=packages,
     install_requires=requires,
-    include_package_date=True,
+    include_package_data=True,
     license="MIT License",
     python_requires=">=3.6",
     classifiers=[
