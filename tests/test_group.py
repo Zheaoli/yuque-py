@@ -17,19 +17,14 @@ def test_group_list_without_user(mock_client):
 
 def test_group_create(mock_client):
     group = Group(mock_client)
-    data = {
-        "name": 1,
-        "login": "abc"
-    }
+    data = {"name": 1, "login": "abc"}
     group.create(data)
     assert mock_client.request_data == data
 
 
 def test_group_create_with_assert_error(mock_client):
     group = Group(mock_client)
-    data = {
-        "login": "abc"
-    }
+    data = {"login": "abc"}
     with pytest.raises(AssertionError):
         group.create(data)
 
