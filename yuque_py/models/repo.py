@@ -43,7 +43,7 @@ class Repo:
         return self._client.request(f"repos/{namespace}", method="DELETE")
 
     @staticmethod
-    def _get_url(user: str, group: str):
+    def _get_url(user: typing.Optional[str], group: typing.Optional[str]):
         assert user or group
         api = f"users/{user}/repos" if user else f"groups/{group}/repos"
         return api

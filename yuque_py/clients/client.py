@@ -44,7 +44,7 @@ class Client(AbstractClient):
     @staticmethod
     def _get_request(
         request_url: str,
-        requests_data: typing.Dict[str, typing.Any],
+        requests_data: typing.Optional[typing.Dict[str, typing.Any]],
         request_header: typing.Dict[str, str],
     ) -> requests.Response:
         if requests_data:
@@ -55,7 +55,7 @@ class Client(AbstractClient):
     @staticmethod
     def _post_request(
         request_url: str,
-        requests_data: typing.Dict[str, typing.Any],
+        requests_data: typing.Optional[typing.Dict[str, typing.Any]],
         request_header: typing.Dict[str, str],
     ) -> requests.Response:
         return requests.post(request_url, json=requests_data, headers=request_header)
@@ -63,7 +63,7 @@ class Client(AbstractClient):
     @staticmethod
     def _put_request(
         request_url: str,
-        requests_data: typing.Dict[str, typing.Any],
+        requests_data: typing.Optional[typing.Dict[str, typing.Any]],
         request_header: typing.Dict[str, str],
     ) -> requests.Response:
         return requests.put(request_url, json=requests_data, headers=request_header)
@@ -71,7 +71,7 @@ class Client(AbstractClient):
     @staticmethod
     def _delete_request(
         request_url: str,
-        requests_data: typing.Dict[str, typing.Any],
+        requests_data: typing.Optional[typing.Dict[str, typing.Any]],
         request_header: typing.Dict[str, str],
     ) -> requests.Response:
         return requests.delete(request_url, headers=request_header)
