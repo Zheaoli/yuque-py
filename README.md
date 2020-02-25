@@ -6,7 +6,7 @@ Python SDK for [yuque](https://www.yuque.com/yuque/developer/api)
 ## Install
 
 ```bash
-pip instal yuque-py
+pip install yuque-py
 ```
 
 ## Usage
