@@ -48,7 +48,7 @@ class Client(AbstractClient):
         request_header: typing.Dict[str, str],
     ) -> requests.Response:
         if requests_data:
-            request_url = f"{request_url}&{urlencode(requests_data)}"
+            request_url = f"{request_url}?{urlencode(requests_data)}"
 
         return requests.get(request_url, headers=request_header)
 
