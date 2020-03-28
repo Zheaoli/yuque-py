@@ -20,9 +20,9 @@ def test_get_request_with_query(standard_client, api_host, user_token):
     api = "abc"
     data = {"abc": 1}
     with requests_mock.Mocker() as m:
-        request = m.get(f"{api_host}/{api}&abc=1", json={"data": {}})
+        request = m.get(f"{api_host}/{api}?abc=1", json={"data": {}})
         response = standard_client.request(api, method="GET", requests_data=data)
-        assert request.last_request.path == f"/{api}&abc=1"
+        assert request.last_request.path == f"/{api}?abc=1"
         assert response == {"data": {}}
         assert request.last_request.headers["User-Agent"] == "@yuque/sdk"
         assert request.last_request.headers["X-Auth-Token"] == user_token
