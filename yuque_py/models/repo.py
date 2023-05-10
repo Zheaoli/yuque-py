@@ -1,5 +1,5 @@
 import typing
-
+import warnings
 from yuque_py.clients.abstract_client import AbstractClient
 
 
@@ -41,6 +41,18 @@ class Repo:
     def delete(self, namespace: str) -> typing.Dict:
         assert namespace
         return self._client.request(f"repos/{namespace}", method="DELETE")
+    
+    def list_toc(self, namespace: str) -> typing.Dict:
+        warnings.warn("Toc api will be updated in the future, please refer to https://www.yuque.com/yuque/developer/ag3xgd for more information", DeprecationWarning)
+        assert namespace
+        return self._client.request(f"repos/{namespace}/toc", method="GET")
+    
+    def update_toc(self, namespace: str, data: typing.Dict) -> typing.Dict:
+        warnings.warn("Toc api will be updated in the future, please refer to https://www.yuque.com/yuque/developer/ag3xgd for more information", DeprecationWarning)
+        assert namespace
+        assert data
+        return self._client.request(f"repos/{namespace}/toc",method="PUT",requests_data=data)
+
 
     @staticmethod
     def _get_url(user: typing.Optional[str], group: typing.Optional[str]):
