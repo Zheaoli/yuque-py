@@ -13,7 +13,7 @@ packages = ["yuque_py", "yuque_py.models", "yuque_py.clients", "yuque_py.excepti
 requires = [
     "pytest==5.1.1",
     "pytest-cov==2.7.1",
-    "requests==2.22.0",
+    "requests==2.31.0",
     "requests-mock==1.6.0"
 ]
 
